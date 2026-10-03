@@ -43,13 +43,11 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
 
       - name: Copy Built APK
-
-
-
         run: |
           mkdir -p build-outputs
-          find android/app/build/outputs/apk -name "*.apk" -exec cp {} build-outputs/CampusGo-v1.0.0.apk \;
+          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk
           ls -la build-outputs/
+
 
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
