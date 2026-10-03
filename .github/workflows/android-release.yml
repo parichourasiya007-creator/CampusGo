@@ -45,10 +45,11 @@ jobs:
       - name: Copy Built APK
         run: |
           mkdir -p build-outputs
-          APK_PATH=$(find android/app/build/outputs/apk -name "*.apk" | head -n 1)
-          echo "Found APK at $APK_PATH"
+          APK_PATH=$(find . -type f -name "*.apk" | grep -v "build-outputs" | head -n 1)
+          echo "Found APK at: $APK_PATH"
           cp "$APK_PATH" build-outputs/CampusGo-v1.0.0.apk
           ls -la build-outputs/
+
 
 
       - name: Create or Update GitHub Release
