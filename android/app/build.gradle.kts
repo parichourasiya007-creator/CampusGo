@@ -76,9 +76,8 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // Real-Time WebSockets - Socket.IO Client
-    implementation("io.socket:socket.client:2.1.1") {
-        exclude(group = "org.json", module = "json")
-    }
+    implementation("io.socket:socket.client:2.1.1")
+
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
