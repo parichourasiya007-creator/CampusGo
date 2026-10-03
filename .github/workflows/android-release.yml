@@ -12,6 +12,8 @@ jobs:
   build-and-release:
     name: Build Native Android APK & Publish Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Code
@@ -22,11 +24,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: 'gradle'
-
-      - name: Grant Execute Permission for Gradlew
-        run: |
-          chmod +x android/gradlew || true
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -36,28 +33,18 @@ jobs:
           cd android
           gradle assembleDebug --no-daemon
 
-      - name: Rename APK Output
+      - name: Copy Built APK
         run: |
           mkdir -p build-outputs
           cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk || cp android/app/build/outputs/apk/debug/*.apk build-outputs/CampusGo-v1.0.0.apk
 
-      - name: Determine Release Tag
-        id: release_tag
-        run: |
-          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
-            TAG_NAME="${GITHUB_REF#refs/tags/}"
-          else
-            TAG_NAME="v1.0.0"
-          fi
-          echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT
-
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.release_tag.outputs.tag_name }}
-          name: "CampusGo Native Android App ${{ steps.release_tag.outputs.tag_name }}"
+          tag_name: "v1.0.0"
+          name: "CampusGo Native Android App v1.0.0"
           body: |
-            ## 🚌 CampusGo Native Android App Release (${{ steps.release_tag.outputs.tag_name }})
+            ## 🚌 CampusGo Native Android App Release (v1.0.0)
             **Dr. Harisingh Gour Vishwavidyalaya (DHSGSU), Sagar, MP**
 
             ### 🚀 Features Included:
@@ -69,7 +56,7 @@ jobs:
             - **Node.js + Socket.IO + MongoDB Backend Integration**
 
             ### 📥 Download APK
-            Download the attached `CampusGo-v1.0.0.apk` below and install it directly on your Android device.
+            Download `CampusGo-v1.0.0.apk` below and install directly on your Android device.
           files: |
             build-outputs/CampusGo-v1.0.0.apk
           draft: false
