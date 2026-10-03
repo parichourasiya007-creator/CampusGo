@@ -32,7 +32,8 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee build.log || (echo "=== GRADLE FAILURE LOG ===" && cat build.log | tail -n 120 && exit 1)
+
 
       - name: Copy Built APK Artifact
         run: |
