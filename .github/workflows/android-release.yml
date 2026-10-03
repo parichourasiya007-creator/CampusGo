@@ -45,10 +45,8 @@ jobs:
       - name: Copy Built APK
         run: |
           mkdir -p build-outputs
-          find . -name "*.apk" -type f -exec cp {} build-outputs/CampusGo-v1.0.0.apk \;
+          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk || cp android/app/build/outputs/apk/debug/*.apk build-outputs/CampusGo-v1.0.0.apk
           ls -la build-outputs/
-
-
 
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
@@ -70,11 +68,13 @@ jobs:
             ### 📥 Download APK
             Download `CampusGo-v1.0.0.apk` below and install directly on your Android device.
           files: build-outputs/CampusGo-v1.0.0.apk
+          fail_on_unmatched_files: true
           make_latest: "true"
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
