@@ -32,18 +32,14 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee build.log
-          mkdir -p ../build-outputs
-          cp app/build/outputs/apk/debug/*.apk ../build-outputs/CampusGo-v1.0.0.apk
-          ls -la ../build-outputs/
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Publish Build Error to Workflow Summary
-        if: failure()
+      - name: Copy Built APK Artifact
         run: |
-          echo "## ❌ Android Build Error Log" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          tail -n 100 android/build.log >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          mkdir -p build-outputs
+          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk
+          ls -lh build-outputs/
+
 
 
 
