@@ -1,12 +1,6 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupAndSubgroups("com.android")
-                includeGroupAndSubgroups("com.google")
-                includeGroupAndSubgroups("androidx")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -21,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CampusGo"
 include(":app")
+
