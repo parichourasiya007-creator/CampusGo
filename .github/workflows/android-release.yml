@@ -45,8 +45,11 @@ jobs:
       - name: Copy Built APK
         run: |
           mkdir -p build-outputs
-          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk || cp android/app/build/outputs/apk/debug/*.apk build-outputs/CampusGo-v1.0.0.apk
+          APK_PATH=$(find android/app/build/outputs/apk -name "*.apk" | head -n 1)
+          echo "Found APK at $APK_PATH"
+          cp "$APK_PATH" build-outputs/CampusGo-v1.0.0.apk
           ls -la build-outputs/
+
 
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
