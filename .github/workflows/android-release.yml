@@ -32,7 +32,8 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          ./gradlew assembleDebug --no-daemon --stacktrace > build.log 2>&1 || (cat build.log | tail -n 100 && exit 1)
+
 
       - name: Copy Built APK
 
