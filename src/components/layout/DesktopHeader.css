@@ -1,0 +1,120 @@
+.desktop-app-header {
+  height: 64px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 600;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.d-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.d-brand-logo {
+  font-size: 1.6rem;
+}
+
+.d-brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.d-brand-sub {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.d-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.d-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.d-nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-app);
+}
+
+.d-nav-link.active {
+  color: var(--color-live);
+  background: var(--color-live-bg);
+}
+
+.d-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-conductor-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-charcoal);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: transform var(--transition-fast);
+}
+
+.btn-conductor-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.d-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.d-back-to-map-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--color-live-bg);
+  color: var(--color-live);
+  border: 1px solid var(--color-live);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.d-back-to-map-btn:hover {
+  background: var(--color-live);
+  color: #FFFFFF;
+}
+

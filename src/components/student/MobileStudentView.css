@@ -1,0 +1,240 @@
+.mobile-app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  background: var(--bg-app);
+  position: relative;
+}
+
+.mobile-header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 600;
+  flex-shrink: 0;
+}
+
+.m-brand-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.m-logo-emoji {
+  font-size: 1.3rem;
+}
+
+.m-brand-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.m-brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.m-conductor-login-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  background: var(--bg-charcoal);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.725rem;
+  border-radius: var(--radius-full);
+  min-height: 36px;
+}
+
+.mobile-content-area {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
+
+.mobile-home-view {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-active-buses-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+  overflow-x: auto;
+  flex-shrink: 0;
+  z-index: 400;
+}
+
+.m-no-buses-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.live-dot-dim {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #94A3B8;
+}
+
+.m-bus-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  white-space: nowrap;
+  min-height: 36px;
+}
+
+.m-bus-chip.selected {
+  background: var(--color-live-bg);
+  border-color: var(--color-live);
+  color: var(--color-live);
+}
+
+.chip-eta {
+  font-size: 0.65rem;
+  color: var(--color-live);
+}
+
+.mobile-map-hero-wrapper {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mobile-stops-view {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.m-stops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.m-stop-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.m-stop-name {
+  font-weight: 800;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.m-stop-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Fixed Bottom Nav (5 items) */
+.mobile-fixed-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(64px + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-light);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  z-index: 1000;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.m-nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: 0.675rem;
+  font-weight: 700;
+  transition: color var(--transition-fast);
+  min-height: 60px;
+}
+
+.m-nav-tab.active {
+  color: var(--color-live);
+}
+
+.m-nav-icon-wrap {
+  position: relative;
+  display: flex;
+}
+
+.m-nav-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-danger);
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-header-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--bg-app);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.m-header-back-btn:hover {
+  background: var(--border-light);
+}
+

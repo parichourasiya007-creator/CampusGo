@@ -1,0 +1,110 @@
+.conductor-shell {
+  max-width: 540px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-charcoal);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  padding-bottom: 76px;
+}
+
+@media (min-width: 768px) {
+  .conductor-shell {
+    border-left: 1px solid #24303E;
+    border-right: 1px solid #24303E;
+  }
+}
+
+.conductor-header {
+  position: sticky;
+  top: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(22, 30, 39, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #24303E;
+}
+
+.op-logo-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-live);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.op-header-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.op-header-sub {
+  font-size: 0.725rem;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.switch-student-chip {
+  padding: 6px 12px;
+  background: #0D1217;
+  border: 1px solid #24303E;
+  color: var(--color-live);
+  font-weight: 800;
+  font-size: 0.75rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.switch-student-chip:hover {
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.conductor-main-area {
+  flex: 1;
+  padding: 16px;
+}
+
+.conductor-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 540px;
+  height: 66px;
+  background: rgba(22, 30, 39, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid #24303E;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.op-nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #64748B;
+  font-size: 0.725rem;
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.op-nav-tab.active {
+  color: var(--color-live);
+}

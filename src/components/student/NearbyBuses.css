@@ -1,0 +1,163 @@
+.nearby-buses-container {
+  margin-top: 20px;
+}
+
+.nearby-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.nearby-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.empty-active-buses-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.empty-title {
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.empty-desc {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.buses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bus-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.bus-card:hover {
+  border-color: var(--color-live);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.bus-card.selected {
+  border-color: var(--color-live);
+  background: rgba(16, 185, 129, 0.04);
+  box-shadow: 0 0 0 1px var(--color-live);
+}
+
+.bus-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bus-card-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-charcoal);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.bus-card-badge.active {
+  border: 2px solid var(--color-live);
+}
+
+.bus-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bus-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bus-card-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.status-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-tag.live {
+  background: var(--color-live-bg);
+  color: var(--color-live);
+}
+
+.bus-card-route {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+}
+
+.bus-card-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eta-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-live);
+  background: var(--color-live-bg);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.chevron-icon {
+  color: var(--text-muted);
+}

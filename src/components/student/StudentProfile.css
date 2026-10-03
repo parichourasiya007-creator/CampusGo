@@ -1,0 +1,170 @@
+.profile-responsive-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.student-id-card {
+  background: linear-gradient(135deg, #0F1419 0%, #161E27 100%);
+  border: 1px solid #24303E;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  color: #FFFFFF;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.id-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #24303E;
+}
+
+.univ-seal {
+  font-size: 1.8rem;
+}
+
+.id-univ-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.id-univ-sub {
+  font-size: 0.675rem;
+  color: var(--color-live);
+  font-weight: 700;
+}
+
+.id-card-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.avatar-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0D1217;
+  border: 2px solid var(--color-live);
+  color: var(--color-live);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.programme-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-live);
+  margin-top: 2px;
+}
+
+.enrol-no {
+  font-size: 0.725rem;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.id-card-footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #24303E;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-item .lbl {
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.footer-item .val {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 2px;
+}
+
+.account-sections-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .account-sections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sec-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sec-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.tile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-app);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+}
+
+.tile-t {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.tile-s {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+.tile-btn-danger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #EF4444;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.875rem;
+
+  min-height: 44px;
+}

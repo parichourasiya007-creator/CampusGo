@@ -1,0 +1,273 @@
+/* CampusGo Desktop Student Experience */
+.desktop-student-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  background-color: var(--bg-app);
+  overflow: hidden;
+}
+
+.desktop-main-layout {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2-Column Desktop Split for Live Map */
+.desktop-split-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.desktop-map-column {
+  flex: 0 0 68%;
+  height: 100%;
+  position: relative;
+  border-right: 1px solid var(--border-light);
+}
+
+.desktop-side-column {
+  flex: 0 0 32%;
+  height: 100%;
+  background: var(--bg-surface);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+}
+
+.d-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 16px;
+}
+
+.d-panel-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.d-live-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-live);
+  background: var(--color-live-bg);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.d-buses-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.d-bus-card {
+  background: var(--bg-app);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.d-bus-card:hover {
+  border-color: var(--color-live);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.d-bus-card.selected {
+  border-color: var(--color-live);
+  background: var(--color-live-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.d-bus-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.d-bus-id {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.d-bus-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-charcoal);
+  color: #fff;
+}
+
+.d-bus-route-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.d-bus-metrics {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.d-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Detailed Selected Bus Panel */
+.d-selected-bus-detail {
+  background: var(--bg-surface);
+  border: 2px solid var(--color-live);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.d-detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.d-close-btn {
+  background: var(--bg-app);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.d-close-btn:hover {
+  color: var(--text-primary);
+  background: var(--border-light);
+}
+
+.d-eta-hero-box {
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.d-eta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.d-eta-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #94A3B8;
+}
+
+.d-eta-val {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #10B981;
+}
+
+.d-next-stop-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.d-stop-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  padding-left: 8px;
+  border-left: 2px dashed var(--border-light);
+}
+
+.d-timeline-node {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.d-timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border-light);
+  margin-left: -15px;
+}
+
+.d-timeline-node.passed .d-timeline-dot {
+  background: #94A3B8;
+}
+
+.d-timeline-node.active .d-timeline-dot {
+  background: var(--color-live);
+  box-shadow: 0 0 0 4px var(--color-live-bg);
+}
+
+.d-timeline-node.next .d-timeline-dot {
+  background: #3B82F6;
+}
+
+/* Empty buses state */
+.d-empty-buses-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--bg-app);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}

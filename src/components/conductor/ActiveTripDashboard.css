@@ -1,0 +1,238 @@
+.active-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.active-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  color: #FFFFFF;
+}
+
+.live-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: var(--color-live);
+  background: rgba(16, 185, 129, 0.15);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 4px;
+}
+
+.active-bus-code {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-icon-pause,
+.btn-icon-resume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #0D1217;
+  border: 1px solid #24303E;
+  color: #E2E8F0;
+  border-radius: var(--radius-md);
+  font-size: 0.775rem;
+  font-weight: 700;
+}
+
+.btn-icon-end {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--color-danger);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  font-size: 0.775rem;
+  font-weight: 800;
+}
+
+.conductor-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid #24303E;
+}
+
+.conductor-leaflet-map {
+  width: 100%;
+  height: 100%;
+}
+
+.gps-source-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 20, 25, 0.92);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid #24303E;
+}
+
+/* Conductor Pin Custom Marker */
+.conductor-gps-marker {
+  position: relative;
+}
+
+.conductor-pin {
+  background: #0F1419;
+  border: 2px solid var(--color-live);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.conductor-pulse-ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: var(--radius-full);
+  background: var(--color-live);
+  opacity: 0.3;
+  animation: pulseRing 1.8s infinite ease-out;
+  z-index: 1;
+}
+
+.ops-status-panel {
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+
+.ops-stop-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stop-box {
+  background: #0D1217;
+  border: 1px solid #24303E;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.box-label {
+  font-size: 0.675rem;
+  font-weight: 800;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.box-value {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 4px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.box-value.highlight {
+  color: #3B82F6;
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.telemetry-card {
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-md);
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94A3B8;
+}
+
+.tel-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tel-val {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.simulation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 0.775rem;
+  color: #94A3B8;
+  margin-top: 4px;
+}
+
+.sim-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #0D1217;
+  border: 1px solid #24303E;
+  color: #94A3B8;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.sim-toggle-btn.active {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--color-live);
+  color: var(--color-live);
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CampusGo</string>
+    <string name="university_name">Dr. Harisingh Gour Vishwavidyalaya</string>
+    <string name="campus_location">Sagar, Madhya Pradesh</string>
+    <string name="channel_name">CampusGo Bus Tracking</string>
+    <string name="channel_description">Active trip GPS tracking notification</string>
+</resources>

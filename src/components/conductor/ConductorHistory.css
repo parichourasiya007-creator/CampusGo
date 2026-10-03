@@ -1,0 +1,73 @@
+.history-page {
+  color: #FFFFFF;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.history-card {
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.history-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.history-bus-badge {
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: #0D1217;
+  border: 1px solid var(--color-live-border);
+  color: var(--color-live);
+}
+
+.history-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-live);
+}
+
+.history-route-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.history-time {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.history-metrics-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #24303E;
+}
+
+.h-metric {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #CBD5E1;
+  font-weight: 600;
+}

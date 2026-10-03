@@ -1,0 +1,73 @@
+.google-map-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  background: #EAEFE9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.google-map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.gmaps-api-fallback-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 25, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.api-notice-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #161E27;
+  border: 1px solid #24303E;
+  padding: 20px;
+  border-radius: var(--radius-xl);
+  color: #FFFFFF;
+  max-width: 440px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.notice-heading {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.notice-body {
+  font-size: 0.775rem;
+  color: #94A3B8;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.notice-body code {
+  color: var(--color-live);
+  background: #0D1217;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.campus-coord-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--color-live);
+  background: rgba(16, 185, 129, 0.12);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}

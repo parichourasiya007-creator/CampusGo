@@ -1,0 +1,142 @@
+.real-gps-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #FFFFFF;
+}
+
+.gps-active-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-live);
+  letter-spacing: 0.04em;
+}
+
+.btn-end-trip-confirm {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--color-danger);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: transform var(--transition-fast);
+}
+
+.btn-end-trip-confirm:hover {
+  transform: scale(1.03);
+}
+
+.gps-error-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+}
+
+.error-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #EF4444;
+}
+
+.error-msg {
+  font-size: 0.8rem;
+  color: #F8FAFC;
+  margin-top: 2px;
+}
+
+.vehicle-route-info-card {
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.v-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.v-label {
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.v-val {
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.real-telemetry-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tel-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #161E27;
+  border: 1px solid #24303E;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.t-label {
+  font-size: 0.675rem;
+  font-weight: 800;
+  color: #64748B;
+  letter-spacing: 0.05em;
+}
+
+.t-val {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 2px;
+}
+
+.privacy-guarantee-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0D1217;
+  border: 1px solid #24303E;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.775rem;
+  color: #94A3B8;
+  line-height: 1.4;
+}
+
+.privacy-guarantee-note strong {
+  color: var(--color-live);
+}
