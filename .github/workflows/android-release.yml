@@ -25,18 +25,25 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Gradle
+      - name: Setup Gradle 8.5
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.5'
+
+      - name: Make Gradlew Executable
+        run: |
+          chmod +x android/gradlew || true
 
       - name: Build Android APK
         run: |
           cd android
-          gradle assembleDebug --no-daemon
+          gradle assembleDebug --no-daemon --stacktrace
 
       - name: Copy Built APK
         run: |
           mkdir -p build-outputs
-          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk || cp android/app/build/outputs/apk/debug/*.apk build-outputs/CampusGo-v1.0.0.apk
+          find android/app/build/outputs/apk -name "*.apk" -exec cp {} build-outputs/CampusGo-v1.0.0.apk \;
+          ls -la build-outputs/
 
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
@@ -63,3 +70,4 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
