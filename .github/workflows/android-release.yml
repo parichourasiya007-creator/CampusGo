@@ -45,8 +45,9 @@ jobs:
       - name: Copy Built APK
         run: |
           mkdir -p build-outputs
-          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk
+          find . -name "*.apk" -type f -exec cp {} build-outputs/CampusGo-v1.0.0.apk \;
           ls -la build-outputs/
+
 
 
       - name: Create or Update GitHub Release
