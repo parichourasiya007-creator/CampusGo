@@ -32,15 +32,13 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee build.log
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Publish Error Log to Summary
-        if: failure()
+      - name: Copy Built APK Artifact
         run: |
-          echo "## ❌ Build Log" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          tail -n 120 android/build.log >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          mkdir -p build-outputs
+          find android/app/build/outputs/apk -name "*.apk" -type f -exec cp {} build-outputs/CampusGo-v1.0.0.apk \;
+          ls -la build-outputs/
 
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
@@ -60,16 +58,14 @@ jobs:
             - **Node.js + Socket.IO + MongoDB Backend Integration**
 
             ### 📥 Download APK
-            Download `app-debug.apk` below and install directly on your Android device.
-          files: |
-            android/app/build/outputs/apk/debug/*.apk
-          fail_on_unmatched_files: true
-
+            Download `CampusGo-v1.0.0.apk` below and install directly on your Android device.
+          files: build-outputs/CampusGo-v1.0.0.apk
           make_latest: "true"
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
