@@ -28,19 +28,26 @@ jobs:
       - name: Setup Gradle 8.5
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Build Android APK & Copy Artifact
+      - name: Build Android APK
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace
-          mkdir -p ../build-outputs
-          echo "=== SEARCHING FOR APK ==="
-          find . -name "*.apk"
-          echo "=== END SEARCH ==="
-          cp $(find . -name "*.apk" -not -path "*/intermediates/*" | head -n 1) ../build-outputs/CampusGo-v1.0.0.apk
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee build.log
 
+      - name: Publish Error Log to Summary
+        if: failure()
+        run: |
+          echo "## ❌ Build Log" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          tail -n 120 android/build.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
 
-          ls -la ../build-outputs/
+      - name: Copy Built APK Artifact
+        run: |
+          mkdir -p build-outputs
+          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk
+          ls -la build-outputs/
+
 
 
 
