@@ -61,9 +61,10 @@ jobs:
 
             ### 📥 Download APK
             Download `app-debug.apk` below and install directly on your Android device.
-          files: "**/*.apk"
-
+          files: |
+            android/app/build/outputs/apk/debug/*.apk
           fail_on_unmatched_files: true
+
           make_latest: "true"
           draft: false
           prerelease: false
