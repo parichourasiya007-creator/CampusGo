@@ -42,20 +42,6 @@ jobs:
           tail -n 120 android/build.log >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
 
-      - name: Copy Built APK Artifact
-        run: |
-          mkdir -p build-outputs
-          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk
-          ls -la build-outputs/
-
-
-
-
-
-
-
-
-
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -74,14 +60,15 @@ jobs:
             - **Node.js + Socket.IO + MongoDB Backend Integration**
 
             ### 📥 Download APK
-            Download `CampusGo-v1.0.0.apk` below and install directly on your Android device.
-          files: build-outputs/CampusGo-v1.0.0.apk
+            Download `app-debug.apk` below and install directly on your Android device.
+          files: android/app/build/outputs/apk/debug/*.apk
           fail_on_unmatched_files: true
           make_latest: "true"
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
