@@ -37,8 +37,9 @@ jobs:
       - name: Copy Built APK Artifact
         run: |
           mkdir -p build-outputs
-          find android/app/build/outputs/apk -name "*.apk" -type f -exec cp {} build-outputs/CampusGo-v1.0.0.apk \;
+          cp android/app/build/outputs/apk/debug/app-debug.apk build-outputs/CampusGo-v1.0.0.apk || cp android/app/build/outputs/apk/*/*.apk build-outputs/CampusGo-v1.0.0.apk
           ls -la build-outputs/
+
 
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
